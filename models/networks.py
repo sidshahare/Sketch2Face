@@ -378,7 +378,7 @@ class MaxPoolingBlock_conv(nn.Module):
        
         if self.use_class_feat:
             self.pre_classifier = Classifier(3, 2, 48, 3, functools.partial(nn.InstanceNorm2d, affine=False), getIntermFeat=True)
-            classifier_path = 'deform.pth'
+            classifier_path = './checkpoints/pretrained/deform.pth'
             self.pre_classifier.load_state_dict(torch.load(classifier_path))
         
         atten_input_ch = 48+48*2+48*4 if self.use_class_feat else 1
