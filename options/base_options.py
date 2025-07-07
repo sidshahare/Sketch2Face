@@ -2,6 +2,7 @@ import argparse
 import os
 from util import util
 import torch
+import numpy
 
 class BaseOptions():
     def __init__(self):
